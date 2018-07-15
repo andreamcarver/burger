@@ -1,5 +1,5 @@
 $(function() {
-    $(".devour").on("click", function(event) {
+    $("button").on("click", function(event) {
       var id = $(this).data("id");
       var newDevour = $(this).data("newdevour");
   
@@ -10,7 +10,7 @@ $(function() {
       // Send the PUT request.
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
-        data: newDevourState
+        data: newDevour
       }).then(
         function() {
           console.log("Ate It", newDevour);
